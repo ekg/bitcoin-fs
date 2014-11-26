@@ -1,6 +1,6 @@
 # bitcoin-fs
 
-Convert files to bitcoin transactions by encoding file data in recipient addresses.
+Convert any file to a series of bitcoin addresses.
 
 ```
 npm install bitcoin-fs
@@ -24,6 +24,12 @@ Or, from the command-line:
 ```bash
 node cli.js test.txt >out.addresses
 ```
+
+## Why?
+
+Once data has been converted to a series of valid bitcoin addresses, it can be stored in the blockchain by including the addresses as recipients of transactions.
+
+This is not a cheap way to backup data, but it is perhaps a very persistent one.
 
 ## License
 

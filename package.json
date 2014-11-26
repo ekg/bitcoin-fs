@@ -1,0 +1,30 @@
+{
+  "name": "bitcoin-fs",
+  "version": "1.0.0",
+  "description": "encode arbitrary data in bitcoin transactions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ekg/bitcoin-fs.git"
+  },
+  "keywords": [
+    "blockchain",
+    "filesystem",
+    "bitcoin",
+    "cryptocurrency"
+  ],
+  "author": "Erik Garrison",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ekg/bitcoin-fs/issues"
+  },
+  "homepage": "https://github.com/ekg/bitcoin-fs",
+  "dependencies": {
+    "bitcoin-address": "^0.3.0",
+    "bitcoinjs-lib": "^1.3.0",
+    "bs58check": "^1.0.3"
+  }
+}

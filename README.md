@@ -10,6 +10,8 @@ npm install bitcoin-fs
 
 ``` js
 var bitcoinfs = require('bitcoin-fs')
+
+// encode
 bitcoinfs.encode(filename,
   function(addresses) {
     addresses.forEach(function(address) {
@@ -17,12 +19,19 @@ bitcoinfs.encode(filename,
     }) 
   })
 
+// decode
+bitcoinfs.decode(filename,
+  function(data) {
+    process.stdout.write(data)
+  })
+
 ```
 
 Or, from the command-line:
 
 ```bash
-node cli.js test.txt >out.addresses
+node cli.js encode test.txt >out.addresses
+node cli.js decode out.addresses >test.v2.txt
 ```
 
 ## Why?

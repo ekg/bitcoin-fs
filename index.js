@@ -2,6 +2,7 @@ var fs = require('fs')
 var base58check = require('bs58check')
 var bitcoin = require('bitcoinjs-lib')
 var bitcoinAddress = require('bitcoin-address')
+var LineReadableStream = require('line-readable-stream');
 
 function encode(filename, cb) {
   var addresses = new Array
@@ -19,7 +20,13 @@ function encode(filename, cb) {
   })
 }
 
-function decode(filename) {
+function decode(filename, cb) {
+  var stream = new LineReadableStream(fs.createReadStream(filename, { flags: "r" }));
+  stream.on("line", function(line) {
+    // chop off address
+    cb(base58check.decode(line).slice(1))
+  });
 }
 
 module.exports.encode = encode
+module.exports.decode = decode

@@ -20,6 +20,28 @@ function encode(filename, cb) {
   })
 }
 
+/*
+function transaction(filename, cb) {
+  var txb = new bitcoin.TransactionBuilder()
+  //txb.addOutput("aa94ab02c182214f090e99a0d57021caffd0f195a81c24602b1028b130b63e31", 0)
+  var privKey = new bitcoin.ECKey.makeRandom()
+  var privAddress = privKey.pub.getAddress()
+  var privScript = privAddress.toOutputScript()
+  
+  var prevTxHash = txb.getHash()
+  var vin = txb.addInput(prevTxHash, 1, 54)
+
+  encode(filename, function(addresses) {
+    addresses.forEach(function(address) {
+      txb.addOutput(address, 0)
+    })
+  })
+  txb.sign(0, privKey)
+
+  cb(txb)
+}
+*/
+
 function decode(filename, cb) {
   var stream = new LineReadableStream(fs.createReadStream(filename, { flags: "r" }));
   stream.on("line", function(line) {
@@ -30,3 +52,4 @@ function decode(filename, cb) {
 
 module.exports.encode = encode
 module.exports.decode = decode
+//module.exports.transaction = transaction

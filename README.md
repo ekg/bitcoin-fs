@@ -30,8 +30,9 @@ bitcoinfs.decode(filename,
 Or, from the command-line:
 
 ```bash
-node cli.js encode test.txt >out.addresses
-node cli.js decode out.addresses >test.v2.txt
+npm install -g bitcoin-fs
+bitcoin-fs encode test.txt >out.addresses
+bitcoin-fs decode out.addresses >test.v2.txt
 ```
 
 ## Why?
